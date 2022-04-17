@@ -2,10 +2,35 @@
   "name": "activity-insight",
   "version": "1.0.0",
   "description": "library to collect first party user data and activity",
-  "main": "index.js",
+  "main": "dist/activity-insight.cjs.js",
+  "module": "dist/activity-insight.esm.js",
+  "browser": "dist/activity-insight.umd.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
+    "dev": "rollup -c -w",
+    "build": "rollup -c",
+    "build:types": "tsc -p ./tsconfig.json --outDir build --declaration true && api-extractor run",
+    "docs": "typedoc src --out docs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Attryb",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^21.1.0",
+    "@rollup/plugin-node-resolve": "^13.2.1",
+    "@rollup/plugin-typescript": "^8.3.2",
+    "eslint": "^8.13.0",
+    "rollup": "^2.70.2",
+    "ts-node": "^10.7.0",
+    "tslib": "^2.3.1",
+    "typescript": "^4.6.3",
+    "@fingerprintjs/fingerprintjs-pro": "^3.5.6",
+    "ngx-device-detector": "^3.0.0"
+  },
+  "dependencies": {
+    "@microsoft/api-extractor": "^7.22.2",
+    "typedoc": "^0.22.15"
+  }
 }
