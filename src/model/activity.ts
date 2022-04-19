@@ -1,12 +1,12 @@
 import { Device } from "./device";
 import { User } from "./user";
 import { UserAction } from "./user-action";
-import { UserLocation } from "./user-location";
+import { IpLocation } from "./ip-location";
 
 export class Activity {
     device!: Device;
     userAction!: UserAction;
-    location!: UserLocation;
+    location?: IpLocation;
     user!: User;
     /**
      *
@@ -14,7 +14,7 @@ export class Activity {
     constructor() {
         this.device = new Device();
         this.user = new User();
-        this.location = new UserLocation();
+        this.location = new IpLocation();
         this.userAction = new UserAction();
     }
 
@@ -24,7 +24,7 @@ export class Activity {
     setDevice(device: Device) {
         this.device = device;
     }
-    setLocation(location: UserLocation) {
+    setLocation(location: IpLocation) {
         this.location = location;
     }
     setAction(action: UserAction) {

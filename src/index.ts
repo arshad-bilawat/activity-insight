@@ -1,3 +1,4 @@
+import { action } from "./user-activity";
 export const sayHi = () => {
-    console.log("Hi.");
-  };
+var adddd = action.getUserActivity();
+};
