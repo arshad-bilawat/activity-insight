@@ -4,6 +4,6 @@ export class UserAction{
     nodeName!: string;
     url!: string;
     title!: string;
-    timestamp!: string;
+    timestamp!: number;
     time!: string;
 }

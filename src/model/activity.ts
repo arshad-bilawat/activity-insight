@@ -27,7 +27,14 @@ export class Activity {
     setLocation(location: IpLocation) {
         this.location = location;
     }
-    setAction(action: UserAction) {
-        this.userAction = this.userAction;
+    setAction(action: string, description: string, nodeName: string) {
+        this.userAction.action=action;
+        this.userAction.description=description;
+        this.userAction.nodeName=nodeName;
+        let date= new Date();
+        this.userAction.time =  date.toUTCString();
+        this.userAction.timestamp=date.getTime();
+        this.userAction.title=document.title;
+        this.userAction.url=document.URL;
     }
 }
